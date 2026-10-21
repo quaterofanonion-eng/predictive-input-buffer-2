@@ -1,0 +1,58 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "yourname.predictive-input-buffer",
+	"name": "Predictive Input Buffer",
+	"version": "v4.7.0",
+	"developer": "yourname",
+	"description": "Hold-padding input buffer for Geometry Dash with F6 in-level stage cycling (2/2 -> 4/4 -> 8/8 -> 16/8 -> OFF), F7 session stats and an optional external event log.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"description": "Master switch. When off, every input is passed through untouched.",
+			"default": true
+		},
+		"only-when-airborne": {
+			"type": "bool",
+			"name": "Predictive: only pad early clicks",
+			"description": "For cube, ball, robot and spider, only pad clicks that started while airborne (the ones that can be lost). Clicks made on the ground stay 100% raw.",
+			"default": true
+		},
+		"buffer-wave": {
+			"type": "bool",
+			"name": "Buffer the wave",
+			"description": "Apply the (shorter) Wave window while you are a wave. Turn off to keep the wave 100% raw.",
+			"default": true
+		},
+		"buffer-flight-modes": {
+			"type": "bool",
+			"name": "Buffer ship, UFO and swing",
+			"description": "Also pad clicks in ship, UFO and swing. Off by default because it adds extra thrust to short taps.",
+			"default": false
+		},
+		"show-toast": {
+			"type": "bool",
+			"name": "Show stage toast",
+			"description": "Show an in-game notification when you press F6 or F7.",
+			"default": true
+		},
+		"debug-log": {
+			"type": "bool",
+			"name": "Log every padded click",
+			"description": "Print each padded release to the Geode console, with its length in ticks. Use this to verify timing.",
+			"default": false
+		},
+		"external-log": {
+			"type": "bool",
+			"name": "Write external event log",
+			"description": "Write every click to events.jsonl in the mod's save folder (path is printed at startup) so console.py can show live stats in a separate window.",
+			"default": false
+		}
+	}
+}
